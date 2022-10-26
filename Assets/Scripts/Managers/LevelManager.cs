@@ -10,11 +10,13 @@ public class LevelManager : StaticInstance<LevelManager>
     private EnemyManager enemies;
     private Timer timer;
     private Coins coins;
+    private Powerups powerups;
 
     protected override void Awake() {
         enemies = GetComponent<EnemyManager>();
         timer = GetComponent<Timer>();
         coins = GetComponent<Coins>();
+        powerups = GetComponent<Powerups>();
 
         base.Awake();
     }
@@ -35,12 +37,17 @@ public class LevelManager : StaticInstance<LevelManager>
     // LEVEL
     /****************************/
 
+    public void ResetCollectables() {
+        ResetCoins();
+        ResetPowerups();
+    }
+
     public void ResetCoins() {
         coins.Reset();
     }
 
     public void ResetPowerups() {
-        // . . .
+        powerups.Reset();
     }
 
     /****************************/
@@ -57,6 +64,14 @@ public class LevelManager : StaticInstance<LevelManager>
 
     public void PlayerToSpawn() {
         player.MoveToSpawn();
+    }
+
+    public void PlayerResetBullets() {
+        player.ResetBullets();
+    }
+
+    public void PlayerDisablePowerups() {
+        player.DisablePowerups();
     }
 
     /****************************/

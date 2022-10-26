@@ -72,10 +72,12 @@ public class GameManager : Singleton<GameManager>
         LevelManager.Instance.ResetTimer();
         LevelManager.Instance.StopTimer();
 
-        LevelManager.Instance.ResetCoins();
+        LevelManager.Instance.ResetCollectables();
 
         LevelManager.Instance.PlayerToSpawn();
         LevelManager.Instance.PlayerFreeze();
+        LevelManager.Instance.PlayerResetBullets();
+        LevelManager.Instance.PlayerDisablePowerups();
 
         LevelManager.Instance.EnemiesReset();
         LevelManager.Instance.EnemiesFreeze();
