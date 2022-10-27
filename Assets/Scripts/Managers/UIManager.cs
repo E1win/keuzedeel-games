@@ -43,6 +43,10 @@ public class UIManager : Singleton<UIManager>
     }
 
     void GameManagerOnGameStateChanged(GameState state) {
+        if (state == GameState.LevelClear) {
+            UpdateClearTimes();
+        }
+
         ActivateOnCondition(panelStart, state == GameState.Start, nameof(panelStart));
         ActivateOnCondition(panelPlay, state == GameState.Play || state == GameState.Start, nameof(panelPlay));
         ActivateOnCondition(panelPause, state == GameState.Pause, nameof(panelPause));
@@ -66,6 +70,11 @@ public class UIManager : Singleton<UIManager>
         for (int i = 0; i < numLives; i++) {
             lives[i].SetActive(true);
         }
+    }
+
+    private void UpdateClearTimes() {
+        clearTime.text = formatter.FormatTime(LevelManager.Instance.GetTime(), 2);
+        highscore.text = formatter.FormatTime(LevelManager.Instance.GetLevelHighscore(), 2);
     }
 
 

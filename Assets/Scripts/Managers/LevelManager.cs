@@ -56,6 +56,10 @@ public class LevelManager : StaticInstance<LevelManager>
         return level.GetIndex();
     }
 
+    public float GetLevelHighscore() {
+        return level.GetHighscore();
+    }
+
     public void ResetCollectables() {
         ResetCoins();
         ResetPowerups();

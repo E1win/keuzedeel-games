@@ -40,4 +40,8 @@ public class Level : MonoBehaviour
     public float GetStartTime() {
         return scriptableLevel.startTime;
     }
+
+    public float GetHighscore() {
+        return scriptableLevel.highscore;
+    }
 }

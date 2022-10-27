@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 1
   sceneName: Level1
-  startTime: 15
-  highscore: 13.955397
+  startTime: 50
+  highscore: 47.86346
   recentClearTime: 0
