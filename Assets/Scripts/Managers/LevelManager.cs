@@ -7,16 +7,22 @@ public class LevelManager : StaticInstance<LevelManager>
 
     public PlayerManager player;
 
+    private float startTime;
+
     private EnemyManager enemies;
     private Timer timer;
     private Coins coins;
     private Powerups powerups;
+    private Level level;
 
     protected override void Awake() {
         enemies = GetComponent<EnemyManager>();
         timer = GetComponent<Timer>();
         coins = GetComponent<Coins>();
         powerups = GetComponent<Powerups>();
+        level = GetComponent<Level>();
+
+        startTime = level.GetStartTime();
 
         base.Awake();
     }
@@ -36,6 +42,19 @@ public class LevelManager : StaticInstance<LevelManager>
     /****************************/
     // LEVEL
     /****************************/
+
+    public bool IsNewHighscore() {
+        return level.IsNewHighscore(timer.time);
+    }
+
+    public void UpdateLevelData() {
+        level.UpdateHighscore(timer.time);
+        level.SaveData();
+    }
+
+    public int GetLevelIndex() {
+        return level.GetIndex();
+    }
 
     public void ResetCollectables() {
         ResetCoins();
@@ -95,6 +114,7 @@ public class LevelManager : StaticInstance<LevelManager>
     /****************************/
 
     public void ResetTimer() {
+        timer.SetStartTime(startTime);
         timer.Reset();
     }
 

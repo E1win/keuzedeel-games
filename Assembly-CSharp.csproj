@@ -57,9 +57,12 @@
      <Compile Include="Assets\Scripts\Environment\Player\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\Environment\Player\PlayerBullet.cs" />
      <Compile Include="Assets\Scripts\Environment\Enemies\Enemy.cs" />
+     <Compile Include="Assets\Scripts\Managers\Other\Powerups.cs" />
      <Compile Include="Assets\Scripts\Managers\Other\Coins.cs" />
      <Compile Include="Assets\Scripts\Environment\Enemies\EnemyManager.cs" />
-     <Compile Include="Assets\Scripts\Managers\Other\Powerups.cs" />
+     <Compile Include="Assets\Scripts\Environment\Finishpoint.cs" />
+     <Compile Include="Assets\Scripts\ScriptableObjects\ScriptableLevel.cs" />
+     <Compile Include="Assets\Scripts\Managers\Other\Level.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

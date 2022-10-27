@@ -10,10 +10,26 @@ public class SceneLoader : MonoBehaviour
     }
 
     public static void LoadNextLevel() {
-        // load next level
+        int levelIndex = LevelManager.Instance.GetLevelIndex() + 1;
+        string sceneName = "Level" + levelIndex.ToString();
+
+        SceneManager.LoadScene(sceneName);
     }
 
     public static void LoadMainMenu() {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public static void LoadHowToPlay() {
+        SceneManager.LoadScene("HowToPlay");
+    }
+
+    /***************************/
+    // other button functionality that should be somewhere else
+    // but it's easier to put it here
+    /***************************/
+
+    public static void ResumeGame() {
+        GameManager.Instance.UpdateGameState(GameState.Play);
     }
 }

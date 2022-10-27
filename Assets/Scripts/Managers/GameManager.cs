@@ -96,6 +96,10 @@ public class GameManager : Singleton<GameManager>
         Time.timeScale = 0;
     }
     private void HandleLevelClear() {
+        if (LevelManager.Instance.IsNewHighscore()) {
+            LevelManager.Instance.UpdateLevelData();
+        }
+
         Time.timeScale = 0;
     }
     private void HandleGameOver() {
