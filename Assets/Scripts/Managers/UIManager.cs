@@ -17,6 +17,7 @@ public class UIManager : Singleton<UIManager>
 
     public TMP_Text timer;
     public GameObject[] lives;
+    public TMP_Text bullets;
 
     [Header("Pause")]
     public GameObject panelPause;
@@ -70,6 +71,10 @@ public class UIManager : Singleton<UIManager>
         for (int i = 0; i < numLives; i++) {
             lives[i].SetActive(true);
         }
+    }
+
+    public void UpdateBullets(int numBullets) {
+        bullets.text = numBullets.ToString();
     }
 
     private void UpdateClearTimes() {

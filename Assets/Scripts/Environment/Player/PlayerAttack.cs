@@ -23,7 +23,7 @@ public class PlayerAttack : MonoBehaviour
     }
 
     void Update() {
-        if (Input.GetMouseButtonDown(0) && bullets > 0) {
+        if (Input.GetMouseButtonDown(0) && bullets > 0 && GameManager.Instance.State == GameState.Play) {
             Shoot();
         }
 
@@ -38,14 +38,18 @@ public class PlayerAttack : MonoBehaviour
         projectile.Init(bulletSpeed, AngleBetweenTwoPoints(_transform.position, mousePos));
 
         bullets--;
+
+        UIManager.Instance.UpdateBullets(bullets);
     }
 
     public void AddBullets(int num) {
         bullets += num;
+        UIManager.Instance.UpdateBullets(bullets);
     }
 
     public void ResetBullets() {
         bullets = beginBullets;
+        UIManager.Instance.UpdateBullets(bullets);
     }
 
     private float AngleBetweenTwoPoints(Vector3 a, Vector3 b)
