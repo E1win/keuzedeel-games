@@ -11,7 +11,7 @@ public class EnemyMovement : MonoBehaviour
 
     [SerializeField] private float baseCastDist = 0.5f;
     
-    [SerializeField] private bool startsFacingRight = true;
+    [SerializeField] private bool startsFacingLeft = true;
 
     string facingDirection;
     Vector3 baseScale;
@@ -22,7 +22,7 @@ public class EnemyMovement : MonoBehaviour
 
     void Awake() {
         baseScale = transform.localScale;
-        facingDirection = startsFacingRight ? RIGHT : LEFT;
+        facingDirection = startsFacingLeft ? RIGHT : LEFT;
     }
 
     void Start()
@@ -97,7 +97,7 @@ public class EnemyMovement : MonoBehaviour
 
     public void ResetFacingDirection() {
         // If enemy started facing right and is currently not doing so, toggle the facing direction.
-        if (startsFacingRight && facingDirection != RIGHT) {
+        if (startsFacingLeft && facingDirection != RIGHT) {
             ToggleFacingDirection();
         }
     }

@@ -40,11 +40,14 @@
      <Compile Include="Assets\Scripts\Environment\Projectile.cs" />
      <Compile Include="Assets\Scripts\Environment\Enemies\EnemyMovement.cs" />
      <Compile Include="Assets\Scripts\Environment\Player\PowerupBar.cs" />
+     <Compile Include="Assets\Scripts\Managers\Other\Level.cs" />
      <Compile Include="Assets\Scripts\Environment\Coin.cs" />
      <Compile Include="Assets\Scripts\Setup\Parallax.cs" />
      <Compile Include="Assets\Scripts\Environment\Player\PlayerPowerup.cs" />
      <Compile Include="Assets\Scripts\Environment\Player\PlayerManager.cs" />
      <Compile Include="Assets\Scripts\Managers\Other\Timer.cs" />
+     <Compile Include="Assets\Scripts\ScriptableObjects\ScriptableLevel.cs" />
+     <Compile Include="Assets\Scripts\Environment\Finishpoint.cs" />
      <Compile Include="Assets\Scripts\Environment\LevelBoundary.cs" />
      <Compile Include="Assets\Scripts\Singleton.cs" />
      <Compile Include="Assets\Scripts\System\SceneLoader.cs" />
@@ -52,6 +55,7 @@
      <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
      <Compile Include="Assets\Scripts\Managers\LevelManager.cs" />
      <Compile Include="Assets\Scripts\Managers\Other\TextFormatter.cs" />
+     <Compile Include="Assets\Scripts\Setup\CameraMover.cs" />
      <Compile Include="Assets\Scripts\Environment\Player\PlayerAttack.cs" />
      <Compile Include="Assets\Scripts\Environment\Player\GroundedChecker.cs" />
      <Compile Include="Assets\Scripts\Environment\Player\PlayerMovement.cs" />
@@ -60,9 +64,7 @@
      <Compile Include="Assets\Scripts\Managers\Other\Powerups.cs" />
      <Compile Include="Assets\Scripts\Managers\Other\Coins.cs" />
      <Compile Include="Assets\Scripts\Environment\Enemies\EnemyManager.cs" />
-     <Compile Include="Assets\Scripts\Environment\Finishpoint.cs" />
-     <Compile Include="Assets\Scripts\ScriptableObjects\ScriptableLevel.cs" />
-     <Compile Include="Assets\Scripts\Managers\Other\Level.cs" />
+     <Compile Include="Assets\Scripts\Environment\Spikes.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

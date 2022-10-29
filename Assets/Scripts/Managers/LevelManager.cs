@@ -23,8 +23,19 @@ public class LevelManager : StaticInstance<LevelManager>
         level = GetComponent<Level>();
 
         startTime = level.GetStartTime();
+        level.LoadData();
 
         base.Awake();
+    }
+
+    void Start() {
+        Debug.Log("Start Called");
+        if (level.GetIndex() == 1) {
+            Debug.Log("Rest Player Lives");
+            // If it's the first level, reset the player lives.
+
+            GameManager.Instance.ResetPlayerLives();
+        }
     }
 
     void Update() {

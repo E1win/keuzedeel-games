@@ -24,6 +24,10 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("HowToPlay");
     }
 
+    public void CloseApplication() {
+        Application.Quit();
+    }
+
     /***************************/
     // other button functionality that should be somewhere else
     // but it's easier to put it here

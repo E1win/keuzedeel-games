@@ -120,6 +120,12 @@ public class GameManager : Singleton<GameManager>
             UpdateGameState(GameState.Start);
         }
     }
+
+    public void ResetPlayerLives() {
+        currentPlayerLives = playerLives;
+
+        UIManager.Instance.UpdateLives(currentPlayerLives);
+    }
 }
 
 public enum GameState {

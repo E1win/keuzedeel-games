@@ -44,11 +44,22 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 2800000, guid: 1be5cd1d06129fe44911945497a2f3c3, type: 3}
+    - {fileID: 2800000, guid: aa7726c56a9bbdb4da746644ac70b305, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: -3315065190973458614, guid: aa7726c56a9bbdb4da746644ac70b305, type: 3}
+  - {fileID: 7756056532108746642, guid: aa7726c56a9bbdb4da746644ac70b305, type: 3}
+  - {fileID: 4619588447441321361, guid: aa7726c56a9bbdb4da746644ac70b305, type: 3}
+  - {fileID: -1063096756911912139, guid: aa7726c56a9bbdb4da746644ac70b305, type: 3}
+  - {fileID: 7317127363528968426, guid: aa7726c56a9bbdb4da746644ac70b305, type: 3}
+  - {fileID: 2970157829275711758, guid: aa7726c56a9bbdb4da746644ac70b305, type: 3}
+  - {fileID: 5269488518935597355, guid: aa7726c56a9bbdb4da746644ac70b305, type: 3}
+  - {fileID: -4638555662373404160, guid: aa7726c56a9bbdb4da746644ac70b305, type: 3}
+  - {fileID: 5741919940690235121, guid: aa7726c56a9bbdb4da746644ac70b305, type: 3}
+  - {fileID: -7593529326693901182, guid: aa7726c56a9bbdb4da746644ac70b305, type: 3}
   - {fileID: -3213436627607152222, guid: 1be5cd1d06129fe44911945497a2f3c3, type: 3}
   - {fileID: 3770722576743467929, guid: 1be5cd1d06129fe44911945497a2f3c3, type: 3}
   - {fileID: -6191228563656363907, guid: 1be5cd1d06129fe44911945497a2f3c3, type: 3}
@@ -59,6 +70,16 @@ SpriteAtlas:
   - {fileID: 2274369799853430904, guid: 1be5cd1d06129fe44911945497a2f3c3, type: 3}
   - {fileID: -7062752197871869575, guid: 1be5cd1d06129fe44911945497a2f3c3, type: 3}
   m_PackedSpriteNamesToIndex:
+  - 8x8  Grey Grass Extra_1
+  - 8x8  Grey Grass Extra_0
+  - 8x8  Grey Grass Extra_3
+  - 8x8  Grey Grass Extra_2
+  - 8x8  Grey Grass Extra_5
+  - 8x8  Grey Grass Extra_4
+  - 8x8  Grey Grass Extra_7
+  - 8x8  Grey Grass Extra_6
+  - 8x8  Grey Grass Extra_9
+  - 8x8  Grey Grass Extra_8
   - 8x8 Grey Grass Tilemap_7
   - 8x8 Grey Grass Tilemap_6
   - 8x8 Grey Grass Tilemap_5
