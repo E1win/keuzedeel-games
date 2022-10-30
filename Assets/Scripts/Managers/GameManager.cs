@@ -126,6 +126,14 @@ public class GameManager : Singleton<GameManager>
 
         UIManager.Instance.UpdateLives(currentPlayerLives);
     }
+
+    public void AddPlayerLife() {
+        if (currentPlayerLives < playerLives) {
+            currentPlayerLives++;
+        }
+
+        UIManager.Instance.UpdateLives(currentPlayerLives);
+    }
 }
 
 public enum GameState {

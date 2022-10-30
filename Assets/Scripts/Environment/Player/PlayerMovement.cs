@@ -9,12 +9,18 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float moveStunCounter;
     [SerializeField] private float onWallBeforeJumpTime = 0.1f;
     [SerializeField] private float onWallBeforeJumpCounter;
+    [SerializeField] private float coyoteTime = 0.15f;
+    [SerializeField] private float coyoteTimeCounter;
+    [SerializeField] private float jumpBufferTime = 0.1f;
+    [SerializeField] private float jumpBufferTimeCounter;
 
     [Header("Horizontal Movement")]
     [SerializeField] private float speed;
 
     [Header("Jump")]
     [SerializeField] private float jumpHeight;
+
+    [SerializeField] private bool jumpPressed;
 
     [Header("Wall Jump")]
     [SerializeField] private float wallJumpLength = 30f;
@@ -46,12 +52,18 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = new Vector3(-1f, 1, 1f);
         }
 
+        if (Input.GetButtonDown("Jump")) jumpBufferTimeCounter = jumpBufferTime;
+
+        jumpPressed = jumpBufferTimeCounter >= 0f;
+
         Jump();
         WallJump();
 
         canGrab = Physics2D.OverlapCircle(wallGrabPoint.position, .2f, whatIsGround);
 
+        jumpBufferTimeCounter -= Time.deltaTime;
         moveStunCounter -= Time.deltaTime;
+        coyoteTimeCounter -= Time.deltaTime;
     }
 
     void FixedUpdate() {
@@ -70,8 +82,11 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void Jump() {
-        if (Input.GetButtonDown("Jump") && grounded) {
+        // If player presses jumps while currently grounded or grounded very recently
+        if (jumpPressed && (grounded || coyoteTimeCounter >= 0f)) {
             rb2D.velocity = new Vector2(rb2D.velocity.x, jumpHeight);
+            
+            jumpBufferTimeCounter = -1f;
         }
 
         // When user lets go of jump button and player character is still moving upward
@@ -95,7 +110,7 @@ public class PlayerMovement : MonoBehaviour
             onWallBeforeJumpCounter -= Time.deltaTime;
         }
 
-        if (isGrabbing && !grounded && Input.GetButton("Jump") && onWallBeforeJumpCounter <= 0) {
+        if (isGrabbing && !grounded && (Input.GetButton("Jump") || jumpPressed) && onWallBeforeJumpCounter <= 0) {
             rb2D.velocity = new Vector2(-moveHorizontal * wallJumpLength, wallJumpHeight);
 
             moveStunCounter = moveStunAfterWallJumpTime;
@@ -115,5 +130,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void SetGrounded(bool value) {
         grounded = value;
+
+        if (!grounded) coyoteTimeCounter = coyoteTime;
     }
 }
