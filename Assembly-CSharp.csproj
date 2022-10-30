@@ -60,11 +60,13 @@
      <Compile Include="Assets\Scripts\Environment\Player\GroundedChecker.cs" />
      <Compile Include="Assets\Scripts\Environment\Player\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\Environment\Player\PlayerBullet.cs" />
+     <Compile Include="Assets\Scripts\Environment\Spikes.cs" />
      <Compile Include="Assets\Scripts\Environment\Enemies\Enemy.cs" />
      <Compile Include="Assets\Scripts\Managers\Other\Powerups.cs" />
      <Compile Include="Assets\Scripts\Managers\Other\Coins.cs" />
      <Compile Include="Assets\Scripts\Environment\Enemies\EnemyManager.cs" />
-     <Compile Include="Assets\Scripts\Environment\Spikes.cs" />
+     <Compile Include="Assets\Scripts\Environment\Enemies\Jumper\EnemyJumperMovement.cs" />
+     <Compile Include="Assets\Scripts\Environment\Enemies\Jumper\EnemyJumperGroundedChecker.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

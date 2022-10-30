@@ -10,6 +10,7 @@ public class EnemyMovement : MonoBehaviour
     public Transform castPos;
 
     [SerializeField] private float baseCastDist = 0.5f;
+    [SerializeField] private float edgeBaseCastDist = 0.5f;
     
     [SerializeField] private bool startsFacingLeft = true;
 
@@ -79,7 +80,7 @@ public class EnemyMovement : MonoBehaviour
     }
 
     bool IsNearEdge() {
-        float castDist = baseCastDist;
+        float castDist = edgeBaseCastDist;
 
         // Determine target destination based on cast distance
         Vector3 targetPos = castPos.position;
