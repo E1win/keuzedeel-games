@@ -775,8 +775,7 @@ GameObject:
   - component: {fileID: 1252006213}
   - component: {fileID: 1252006218}
   - component: {fileID: 1252006215}
-  - component: {fileID: 1252006214}
-  - component: {fileID: 1252006217}
+  - component: {fileID: 1252006219}
   - component: {fileID: 1252006216}
   m_Layer: 0
   m_Name: Level Manager
@@ -812,21 +811,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1503811111}
---- !u!114 &1252006214
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1252006211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f33a2bc458730844b0aa69d53265ba1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coins:
-  - {fileID: 1271422004}
-  - {fileID: 1815435001}
 --- !u!114 &1252006215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -856,20 +840,6 @@ MonoBehaviour:
   - {fileID: 2119810806}
   - {fileID: 470101466}
   - {fileID: 1317139275}
---- !u!114 &1252006217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1252006211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afb9cb4ac18084a419fad207d4718b6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  powerups:
-  - {fileID: 355120906}
 --- !u!114 &1252006218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -883,6 +853,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptableLevel: {fileID: 11400000, guid: bdd09ba797e9e784ebb5e5f403ec0c03, type: 2}
+--- !u!114 &1252006219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1252006211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16858f93c86320440ae2fd5c7a45c1e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coins:
+  - {fileID: 1271422004}
+  - {fileID: 1815435001}
+  powerups:
+  - {fileID: 355120906}
+  lifeUps: []
 --- !u!4 &1271422003 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5095347809778597307, guid: e175b5ac9aed8e040a3937655c5696f6, type: 3}
