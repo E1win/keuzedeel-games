@@ -13,8 +13,6 @@ public class Spikes : MonoBehaviour
     //     }
     // }
 
-    // add void start and save player first time trigger is entered.
-
     private PlayerManager player;
 
     void OnTriggerEnter2D(Collider2D other) {

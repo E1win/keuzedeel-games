@@ -76456,7 +76456,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 836879520064367187, guid: 76155de097722dc4dbd75e3c705a9251, type: 3}
       propertyPath: orthographic size
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 836879520064367276, guid: 76155de097722dc4dbd75e3c705a9251, type: 3}
       propertyPath: m_RootOrder
@@ -76741,6 +76741,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4853615779108584888, guid: acb287deac646a24ea0b11755b8941f4, type: 3}
+      propertyPath: m_text
+      value: These gems give you temporary immortality and allow you to kill enemies
+        by touch!
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: acb287deac646a24ea0b11755b8941f4, type: 3}
 --- !u!1001 &4959785784895407572
@@ -76867,10 +76872,6 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 1175533876}
-    - target: {fileID: 5107192385445259704, guid: b09e870643b6b8b4cbc7e6fc390e7ee7, type: 3}
-      propertyPath: m_Lens.OrthographicSize
-      value: 7
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b09e870643b6b8b4cbc7e6fc390e7ee7, type: 3}
 --- !u!1001 &5717630184229217217

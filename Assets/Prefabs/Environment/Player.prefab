@@ -406,7 +406,7 @@ MonoBehaviour:
   jumpBufferTime: 0.1
   jumpBufferTimeCounter: 0
   speed: 2.3
-  jumpHeight: 33
+  jumpHeight: 35
   jumpPressed: 0
   wallJumpLength: 15
   wallJumpHeight: 28
