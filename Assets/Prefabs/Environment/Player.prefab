@@ -444,7 +444,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   projectilePrefab: {fileID: 8679523498863010993, guid: 4014481ae27f5bc4a98ccb3c9ca56b31, type: 3}
-  bulletSpeed: 5
+  bulletSpeed: 25
   bullets: 3
   shootingDelay: 0.2
 --- !u!50 &3756897092371284653

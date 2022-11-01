@@ -22,7 +22,7 @@ public class Projectile : MonoBehaviour
     }
 
     void FixedUpdate() {
-        rb2D.AddForce(-transform.right * _speed, ForceMode2D.Impulse);
+        rb2D.velocity = -transform.right * _speed;
     }
 
     public void Init(float inputSpeed, float inputRotation) {
