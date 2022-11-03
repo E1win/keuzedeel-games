@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     private bool canGrab, isGrabbing, isGrabbingPreviousValue;
 
     [Header("Other")]
+    [SerializeField] private float currentDirection = 1;
     [SerializeField] private float maxVelocity = 20f;
     [SerializeField] private bool grounded;
     public LayerMask whatIsGround;
@@ -45,12 +46,7 @@ public class PlayerMovement : MonoBehaviour
     {
         moveHorizontal = Input.GetAxisRaw("Horizontal");
 
-        // Flip player based on direction pressed
-        if (moveHorizontal > 0.1f) {
-            transform.localScale = Vector3.one;
-        } else if (moveHorizontal < -0.1f) {
-            transform.localScale = new Vector3(-1f, 1, 1f);
-        }
+        if (moveStunCounter <= 0f && !isGrabbing) SetFacingDirection(moveHorizontal);
 
         if (Input.GetButtonDown("Jump")) jumpBufferTimeCounter = jumpBufferTime;
 
@@ -100,18 +96,21 @@ public class PlayerMovement : MonoBehaviour
         isGrabbingPreviousValue = isGrabbing;
         isGrabbing = false;
 
-        if (canGrab && !grounded && moveHorizontal != 0) {
+        if (canGrab && !grounded) {
             isGrabbing = true;
 
             if (!isGrabbingPreviousValue) {
                 onWallBeforeJumpCounter = onWallBeforeJumpTime;
+                SetFacingDirection(Input.GetAxisRaw("Horizontal"));
             }
 
             onWallBeforeJumpCounter -= Time.deltaTime;
         }
 
         if (isGrabbing && !grounded && (Input.GetButton("Jump") || jumpPressed) && onWallBeforeJumpCounter <= 0) {
-            rb2D.velocity = new Vector2(-moveHorizontal * wallJumpLength, wallJumpHeight);
+            rb2D.velocity = new Vector2(-currentDirection * wallJumpLength, wallJumpHeight);
+
+            SetFacingDirection(-currentDirection);
 
             moveStunCounter = moveStunAfterWallJumpTime;
         }
@@ -124,9 +123,21 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void SetFacingDirection(float direction) {
+        if (direction > 0) {
+            transform.localScale = Vector3.one;
+            currentDirection = direction;
+        } else if (direction < 0) {
+            transform.localScale = new Vector3(-1f, 1, 1f);
+            currentDirection = direction;
+        }
+
+    }
+
     /****************************/
     // SETTERS
     /****************************/
+
 
     public void SetGrounded(bool value) {
         grounded = value;
