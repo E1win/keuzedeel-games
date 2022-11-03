@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1823ce39286d9d4bb0b07395c6c7307, type: 3}
   m_Name: Level3
   m_EditorClassIdentifier: 
-  index: 2
+  index: 3
   sceneName: Level3
   startTime: 125
   highscore: 121.0218

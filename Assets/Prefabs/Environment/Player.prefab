@@ -401,16 +401,17 @@ MonoBehaviour:
   moveStunCounter: 0
   onWallBeforeJumpTime: 0.1
   onWallBeforeJumpCounter: 0
-  coyoteTime: 0.15
+  coyoteTime: 0.1
   coyoteTimeCounter: 0
   jumpBufferTime: 0.1
   jumpBufferTimeCounter: 0
   speed: 2.3
-  jumpHeight: 36
+  jumpHeight: 32
   jumpPressed: 0
   wallJumpLength: 15
   wallJumpHeight: 28
   wallGrabPoint: {fileID: 9085768067162111205}
+  currentDirection: 1
   maxVelocity: 20
   grounded: 0
   whatIsGround:
