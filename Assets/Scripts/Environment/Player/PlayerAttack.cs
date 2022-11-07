@@ -9,9 +9,7 @@ public class PlayerAttack : MonoBehaviour
 
     [SerializeField] private float bulletSpeed = 5f;
     private int beginBullets = 3;
-    [SerializeField] private int bullets;
-    [SerializeField] private float shootingDelay = 0.2f;
-    private float shootingDelayCounter;
+    [SerializeField] private int bulletCount;
     
     private Transform _transform;
 
@@ -19,15 +17,13 @@ public class PlayerAttack : MonoBehaviour
         if (cam == null) cam = Camera.main;
         _transform = transform;
 
-        bullets = beginBullets;
+        bulletCount = beginBullets;
     }
 
     void Update() {
-        if (Input.GetMouseButtonDown(0) && bullets > 0 && GameManager.Instance.State == GameState.Play) {
+        if (Input.GetMouseButtonDown(0) && bulletCount > 0 && GameManager.Instance.State == GameState.Play) {
             Shoot();
         }
-
-        // shootingDelayCounter -= Time.deltaTime;
     }
 
     private void Shoot() {
@@ -37,19 +33,19 @@ public class PlayerAttack : MonoBehaviour
         Projectile projectile = Instantiate(projectilePrefab, _transform.position, Quaternion.identity).GetComponent<Projectile>();
         projectile.Init(bulletSpeed, AngleBetweenTwoPoints(_transform.position, mousePos));
 
-        bullets--;
+        bulletCount--;
 
-        UIManager.Instance.UpdateBullets(bullets);
+        UIManager.Instance.UpdateBullets(bulletCount);
     }
 
     public void AddBullets(int num) {
-        bullets += num;
-        UIManager.Instance.UpdateBullets(bullets);
+        bulletCount += num;
+        UIManager.Instance.UpdateBullets(bulletCount);
     }
 
     public void ResetBullets() {
-        bullets = beginBullets;
-        UIManager.Instance.UpdateBullets(bullets);
+        bulletCount = beginBullets;
+        UIManager.Instance.UpdateBullets(bulletCount);
     }
 
     private float AngleBetweenTwoPoints(Vector3 a, Vector3 b)

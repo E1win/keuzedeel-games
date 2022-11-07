@@ -37,8 +37,6 @@ public class LevelManager : StaticInstance<LevelManager>
     }
 
     void Update() {
-        // check timer
-        // if time is up
         if (timer.time <= 0f) {
             Debug.Log("Time is up!");
             UIManager.Instance.UpdateTimer(timer.time);

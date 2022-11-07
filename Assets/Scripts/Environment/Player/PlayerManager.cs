@@ -16,11 +16,7 @@ public class PlayerManager : MonoBehaviour
         playerPowerup = GetComponent<PlayerPowerup>();
         spawnPos = transform.position;
     }
-
-    void Start()
-    {
-    }
-
+    
     public void Freeze() {
         rb2D.constraints = RigidbodyConstraints2D.FreezePosition;
     }
